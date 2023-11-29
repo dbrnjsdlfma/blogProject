@@ -1,8 +1,17 @@
+import React from 'react';
+import SkillItem from './components/SkillItem'
+import frontEndSkill from "./data/frontEndSkill"
+import backEndSkill from "./data/backEndSkill"
+import dataBaseSkill from "./data/dataBaseSkill"
+import otherSkill from "./data/otherSkill"
 import './css/global.css'
 import './App.css';
-
 function App() {
-  return (
+    console.log(frontEndSkill)
+    const topBtn = (e) => {
+        window.scrollTo({top : 0 , behavior: 'smooth'})
+    }
+return (
     <div className="App">
         <header>
             <nav>
@@ -33,17 +42,23 @@ function App() {
                     </div>
                     <div className="aboutme_body">
                         <article>
-                            <span>이름</span>
+                            <span className="material-symbols-outlined">
+                                person이름
+                            </span>
                             <p>유권</p>
                         </article>
                         <article>
-                            <span>생년월일</span>
+                            <span class="material-symbols-outlined">
+                                cake생년월일
+                            </span>
                             <p>1993. 07. 28</p>
                         </article>
                         <article>
-                            <span>연락처</span>
+                            <span class="material-symbols-outlined">
+                                phonelink_ring연락처
+                            </span>
                             <p>010 - 9517 - 4790</p>
-                            <p>dbrnjsdlfma@gmail.com</p>
+                            {/* <p>dbrnjsdlfma@gmail.com</p> */}
                         </article>
                     </div>
                 </div>
@@ -51,7 +66,32 @@ function App() {
             <section>
                 <div className="skills">
                     <div className="section_title">
-                        <h2>About me</h2>
+                        <h2>Skills</h2>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>FrontEnd</span>
+                            <SkillItem data={frontEndSkill}/>
+                        </li>
+                        <li>
+                            <span>BackEnd</span>
+                            <SkillItem data={backEndSkill}/>
+                        </li>
+                        <li>
+                            <span>DataBase</span>
+                            <SkillItem data={dataBaseSkill}/>
+                        </li>
+                        <li>
+                            <span>Others</span>
+                            <SkillItem data={otherSkill}/>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <div className='projects'>
+                    <div className="section_title">
+                        <h2>Projects</h2>
                     </div>
                 </div>
             </section>
@@ -60,8 +100,8 @@ function App() {
             <address>
                 <span>Copyright © 2023 YuGwon Portfolio. All rights reserved.</span>
             </address>
-            <button>
-                <span class="material-symbols-outlined">
+            <button onClick={() => topBtn()}>
+                <span className="material-symbols-outlined">
                     arrow_upward
                 </span>
             </button>

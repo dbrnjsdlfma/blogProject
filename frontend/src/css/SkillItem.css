@@ -1,0 +1,16 @@
+.skillItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem;
+    margin: 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+.skillItem img {
+    width: 40px;
+}
+.skillItem span {
+    font-size: 1.6rem;
+}
